@@ -1,3 +1,99 @@
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.option-btn {
+  min-width: 180px;
+  min-height: 140px;
+  border-radius: 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: rgba(255,255,255,0.85);
+  color: #222;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  border: none;
+  outline: none;
+}
+
+.option-btn:hover, .option-btn:focus {
+  background: #f8e71c;
+  color: #222;
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+.option-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.text-shadow {
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  /* Animated gradient background */
+  background: linear-gradient(-45deg, #ff6b6b, #f8e71c, #50e3c2, #4a90e2);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  /* Ensure background covers all devices and is crisp on high-DPI */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-size: 600% 600%;
+    font-size: 1rem;
+  }
+  .option-btn {
+    min-width: 120px !important;
+    min-height: 90px !important;
+    font-size: 1rem !important;
+    padding: 0.5rem 0.5rem !important;
+  }
+  h1, .fw-bold {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background-size: 900% 900%;
+    font-size: 0.95rem;
+  }
+  .option-btn {
+    min-width: 90px !important;
+    min-height: 70px !important;
+    font-size: 0.95rem !important;
+    padding: 0.3rem 0.3rem !important;
+  }
+  h1, .fw-bold {
+    font-size: 1.1rem !important;
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -80,3 +176,102 @@
   .hidden {
     display: none;
   }
+@media (max-width: 991.98px) {
+  .sidebar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: auto !important;
+    z-index: 1040;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+  }
+  .sidebar .nav {
+    flex-direction: row !important;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .sidebar .nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.375rem;
+    margin: 0 0.25rem;
+  }
+  .sidebar-sticky {
+    width: 100%;
+  }
+  .navbar-brand {
+    display: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .dashboard-card, .card {
+    margin-bottom: 1rem;
+  }
+  .row.g-3 {
+    --bs-gutter-x: 0.5rem;
+    --bs-gutter-y: 0.5rem;
+  }
+  .col-lg-3, .col-lg-9, .col-lg-10, .col-md-3, .col-md-9, .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .container, .container-fluid {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .sidebar {
+    flex-direction: column;
+    height: auto !important;
+  }
+}
+/* Ensure tables scroll horizontally on small screens */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+/* Sidebar nav link hover effect */
+.sidebar .nav-link {
+  transition: background 0.18s, color 0.18s;
+  border-radius: 0.375rem;
+}
+.sidebar .nav-link:hover, .sidebar .nav-link:focus {
+  background: #212529;
+  color: #ffd600 !important;
+  text-decoration: none;
+  outline: 2px solid #ffd600;
+  outline-offset: -2px;
+}
+.dashboard-card {
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.dashboard-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+.dashboard-icon {
+  font-size: 2.2rem;
+  color: #4a90e2;
+  margin-bottom: 0.5rem;
+}
+/* Make report card table columns equal width */
+.report-card-table th,
+.report-card-table td {
+  min-width: 90px;
+  max-width: 90px;
+  width: 90px;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+}
+.report-card-table th[rowspan],
+.report-card-table td[rowspan] {
+  min-width: 120px;
+  max-width: 120px;
+  width: 120px;
+}
